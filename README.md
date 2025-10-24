@@ -1,1 +1,1 @@
-# 2025-react-secret-diary
+# 두근 두근 비밀일기
