@@ -28,3 +28,5 @@ https://firebase.google.com/docs/auth/web/password-auth?hl=ko
 
 참고링크(사용자 관리하기)
 https://firebase.google.com/docs/auth/web/manage-users?hl=ko
+
+context 폴더 생성 -> AuthContext.js 파일 생성 => 인증 관리
