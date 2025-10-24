@@ -23,10 +23,13 @@ Firebase 프로젝트 개요 -> 빌드 -> Authentication -> 이메일/비밀번�
 [로그인 구현]
 hooks 폴더 생성 -> useSignup.js 생성
 
-참고링크
+참고링크(JavaScript를 사용하여 비밀번호 기반 계정으로 Firebase에 인증)
 https://firebase.google.com/docs/auth/web/password-auth?hl=ko
 
-참고링크(사용자 관리하기)
+참고링크(Firebase에서 사용자 관리하기)
 https://firebase.google.com/docs/auth/web/manage-users?hl=ko
 
 context 폴더 생성 -> AuthContext.js 파일 생성 => 인증 관리
+
+참고링크(JavaScript를 사용하여 비밀번호 기반 계정으로 Firebase에 인증)
+https://firebase.google.com/docs/auth/web/password-auth?hl=ko
