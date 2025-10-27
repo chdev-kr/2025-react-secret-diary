@@ -45,6 +45,15 @@ npm install firebase
 - `hooks` 폴더 생성 → `useSignup.js` 생성
 - `context` 폴더 생성 → `AuthContext.js` 파일 생성 (인증 관리)
 
+hooks 폴더에 useLogin.js 생성
+참고 자료 :(JavaScript를 사용하여 비밀번호 기반 계정으로 Firebase에 인증)
+https://firebase.google.com/docs/auth/web/password-auth?hl=ko
+
+firebase -> 빌드 -> firestore Database -> 데이터베이스 만들기 -> standard 버전 -> 위치: asia-northeast3(Seoul) -> 테스트 모드에서 시작
+pig 속도 확인: https://gcping.com/
+
+https://firebase.google.com/docs/firestore/manage-data/add-data?hl=ko
+
 ### 참고 자료
 
 - [JavaScript를 사용하여 비밀번호 기반 계정으로 Firebase에 인증](https://firebase.google.com/docs/auth/web/password-auth?hl=ko)
