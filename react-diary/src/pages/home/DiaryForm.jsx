@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css";
 import { useFirestore } from "../../hooks/useFirestore";
 
@@ -20,6 +20,14 @@ export default function DiaryForm({ uid }) {
     addDocument({ uid, title, text });
     console.log(title, text);
   };
+
+  useEffect(() => {
+    if (response.success) {
+      console.log(response);
+      setTitle("");
+      setText("");
+    }
+  }, [response.success]); // response.success가 바뀔 때만 effect를 재실행합니다.
 
   return (
     <form onSubmit={handleSubmit}>

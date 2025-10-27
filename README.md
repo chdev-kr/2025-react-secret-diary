@@ -58,6 +58,8 @@ https://firebase.google.com/docs/firestore/manage-data/add-data?hl=ko
 
 - [JavaScript를 사용하여 비밀번호 기반 계정으로 Firebase에 인증](https://firebase.google.com/docs/auth/web/password-auth?hl=ko)
 - [Firebase에서 사용자 관리하기](https://firebase.google.com/docs/auth/web/manage-users?hl=ko)
+- [Cloud Firestore에서 단순 쿼리 및 복합 쿼리 실행]
+  https://firebase.google.com/docs/firestore/query-data/queries?hl=ko
 
 ## 4. 추가 학습 자료
 
