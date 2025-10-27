@@ -27,15 +27,15 @@ export default function DiaryForm({ uid }) {
       setTitle("");
       setText("");
     }
-  }, [response.success]); // response.success가 바뀔 때만 effect를 재실행합니다.
+  }, [response]); // response 객체 전체를 의존성으로 설정
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className="a11y-hidden" htmlFor="diary-title">
+      <label className={styles["a11y-hidden"]} htmlFor="diary-title">
         일기 제목
       </label>
       <input
-        className="input-style"
+        className={styles["input-style"]}
         id="diary-title"
         type="text"
         placeholder="제목"
@@ -44,7 +44,7 @@ export default function DiaryForm({ uid }) {
         value={title}
       />
 
-      <label className="a11y-hidden" htmlFor="diary-content">
+      <label className={styles["a11y-hidden"]} htmlFor="diary-content">
         일기 내용
       </label>
       <textarea
@@ -54,7 +54,7 @@ export default function DiaryForm({ uid }) {
         onChange={handleData}
         value={text}
       ></textarea>
-      <button className="black-btn" type="submit">
+      <button className={styles["black-btn"]} type="submit">
         작성하기
       </button>
     </form>

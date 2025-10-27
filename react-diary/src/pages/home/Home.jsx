@@ -14,16 +14,21 @@ const formattedDate = `${year}.${month}.${day}`;
 
 export default function Home() {
   const { user } = useAuthContext();
-  const { documents, error } = useCollection("diary", ["uid", "==", user.uid]);
+  const { documents, error } = useCollection("diary", ["uid", "==", user?.uid]);
+
+  // 사용자가 로그인하지 않은 경우 로딩 표시
+  if (!user) {
+    return <div>로그인 중...</div>;
+  }
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <main className={styles["diary-main"]}>
-        <h2 className="heart">{formattedDate}의 비밀일기</h2>
-        <DiaryForm uid={user.uid}></DiaryForm>
+        <h2 className={styles.heart}>{formattedDate}의 비밀일기</h2>
+        <DiaryForm uid={user.uid} />
       </main>
-      <section>
-        <h2 className="a11y-hidden">일기 목록</h2>
+      <section className={styles.section}>
+        <h2 className={styles["a11y-hidden"]}>일기 목록</h2>
         <ul>
           {error && <strong> {error}</strong>}
           {documents && <DiaryList diaries={documents} />}
