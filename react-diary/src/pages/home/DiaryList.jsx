@@ -2,8 +2,11 @@ import React from "react";
 import styles from "./Home.module.css";
 import iconEdit from "../../img/icon-edit.svg";
 import iconDelete from "../../img/icon-delete.svg";
+import { useFirestore } from "../../hooks/useFirestore";
 
 export default function DiaryList({ diaries }) {
+  const { deleteDocument } = useFirestore("diary");
+
   function formattingTime(seconds) {
     const date = new Date(seconds * 1000);
     const year = date.getFullYear();
@@ -20,7 +23,6 @@ export default function DiaryList({ diaries }) {
   return (
     <>
       {diaries.map((item) => {
-        console.log(item);
         return (
           <li key={item.id}>
             <article className={styles["diary-article"]}>
@@ -40,7 +42,7 @@ export default function DiaryList({ diaries }) {
                   <img src={iconEdit} alt="수정" />
                 </button>
                 <span></span>
-                <button type="button">
+                <button type="button" onClick={() => deleteDocument(item.id)}>
                   <img src={iconDelete} alt="삭제" />
                 </button>
               </div>
