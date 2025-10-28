@@ -8,7 +8,18 @@ export default function DiaryList({ diaries }) {
   const { deleteDocument } = useFirestore("diary");
 
   function formattingTime(seconds) {
+    // seconds가 유효한지 확인
+    if (!seconds || typeof seconds !== "number") {
+      return "날짜 없음";
+    }
+
     const date = new Date(seconds * 1000);
+
+    // 유효한 날짜인지 확인
+    if (isNaN(date.getTime())) {
+      return "날짜 없음";
+    }
+
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const day = String(date.getDate()).padStart(2, "0");
@@ -29,11 +40,17 @@ export default function DiaryList({ diaries }) {
               <h3 className={styles["article-title"]}>{item.title}</h3>
               <time
                 className={styles["article-time"]}
-                dateTime={formattingTime(item.createdAt.seconds)
-                  .replaceAll(".", "-")
-                  .slice(0, -4)}
+                dateTime={
+                  item.createdTime?.seconds
+                    ? formattingTime(item.createdTime.seconds)
+                        .replaceAll(".", "-")
+                        .slice(0, -4)
+                    : ""
+                }
               >
-                {formattingTime(item.createdAt.seconds)}
+                {item.createdTime?.seconds
+                  ? formattingTime(item.createdTime.seconds)
+                  : "날짜 없음"}
               </time>
               <p className={styles["article-content"]}>{item.text}</p>
 
